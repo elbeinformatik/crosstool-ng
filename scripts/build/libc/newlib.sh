@@ -22,6 +22,9 @@ do_libc_start_files() {
         CT_DoExecLog ALL cp -r "${CT_SRC_DIR}/newlib/newlib/libc/sys/xtensa/include/."   \
                                "${CT_HEADERS_DIR}"
     fi
+    CT_DoExecLog ALL mkdir -p "${CT_BUILDTOOLS_PREFIX_DIR}/${CT_TARGET}"
+    CT_DoExecLog ALL ln -sv "${CT_PREFIX_DIR}/${CT_TARGET}/include" \
+                "${CT_BUILDTOOLS_PREFIX_DIR}/${CT_TARGET}/include"
     CT_EndStep
 }
 

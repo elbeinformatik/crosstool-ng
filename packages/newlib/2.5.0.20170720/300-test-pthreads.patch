@@ -1,0 +1,31 @@
+diff -rwc newlib-2.5.0.20170720.org/newlib/libc/include/sys/features.h newlib-2.5.0.20170720/newlib/libc/include/sys/features.h
+*** newlib-2.5.0.20170720.org/newlib/libc/include/sys/features.h	2017-07-20 16:18:54.000000000 +0200
+--- newlib-2.5.0.20170720/newlib/libc/include/sys/features.h	2017-08-26 10:47:01.025734100 +0200
+***************
+*** 384,390 ****
+  # define _POSIX_VERSION 199009L
+  #endif
+  
+! #ifdef __CYGWIN__
+  
+  #if __POSIX_VISIBLE >= 200809
+  #define _POSIX_VERSION				200809L
+--- 384,390 ----
+  # define _POSIX_VERSION 199009L
+  #endif
+  
+! #if	1 || defined(__CYGWIN__)
+  
+  #if __POSIX_VISIBLE >= 200809
+  #define _POSIX_VERSION				200809L
+***************
+*** 448,453 ****
+--- 448,455 ----
+  #define _POSIX_THREAD_SAFE_FUNCTIONS		200809L
+  /* #define _POSIX_THREAD_SPORADIC_SERVER	    -1 */
+  #define _POSIX_THREADS				200809L
++ /* UNIX98 added some new pthread mutex attributes */
++ #define _UNIX98_THREAD_MUTEX_ATTRIBUTES         1
+  /* #define _POSIX_TIMEOUTS			    -1 */
+  #define _POSIX_TIMERS				200809L
+  /* #define _POSIX_TRACE				    -1 */
